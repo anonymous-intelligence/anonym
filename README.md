@@ -1,7 +1,4 @@
-﻿# Pazaryeri MYO Bilgilendirme ve Sorgu Platformu
-
-## Proje Amacı
-Bu proje, Pazaryeri Meslek Yüksekokulu öğrencileri ve kullanıcıları için çeşitli sorgulama, bilgiye erişim ve yardımcı araçlar sunan modern, modüler ve geliştirici dostu bir platformdur.
+﻿# Anonymous Intelligence
 
 ## Kurulum
 1. Bağımlılıkları yükleyin:
