@@ -62,7 +62,7 @@ export default function AltyapiSorgu() {
     setLoading(true)
     toast({ title: 'Sorgulanıyor...', description: 'Altyapı bilgisi sorgulanıyor.' })
     try {
-      const res = await fetch('http://78.185.19.222:5000/api/altyapi-info', {
+      const res = await fetch('https://78.185.19.222:5000/api/altyapi-info', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: addressString })

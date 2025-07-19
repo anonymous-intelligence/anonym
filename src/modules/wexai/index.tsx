@@ -13,7 +13,7 @@ interface AIResponse {
 }
 
 async function callAIService(message: string, history: { role: string, content: string }[]): Promise<AIResponse> {
-  const response = await fetch('http://78.185.19.222:5000/api/ai/ask', {
+  const response = await fetch('https://78.185.19.222:5000/api/ai/ask', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ prompt: message, history }),

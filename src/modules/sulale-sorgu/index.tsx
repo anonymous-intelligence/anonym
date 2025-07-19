@@ -81,7 +81,7 @@ const SulaleSorgu = () => {
         setLoading(true);
         toast({ title: 'Aranıyor...', description: 'TC ile sülale sorgusu yapılıyor.' });
         try {
-            const response = await fetch(`http://78.185.19.222:5000/api/sulale/tc/${tc}`);
+            const response = await fetch(`https://78.185.19.222:5000/api/sulale/tc/${tc}`);
             const data: SulaleResponse = await response.json();
             if (data.success) {
                 setSulaleData(data.data);
@@ -112,7 +112,7 @@ const SulaleSorgu = () => {
         setLoading(true);
         toast({ title: 'Aranıyor...', description: 'Soyad ile sülale sorgusu yapılıyor.' });
         try {
-            const response = await fetch(`http://78.185.19.222:5000/api/sulale/soyad/${encodeURIComponent(tc)}`);
+            const response = await fetch(`https://78.185.19.222:5000/api/sulale/soyad/${encodeURIComponent(tc)}`);
             const data = await response.json();
             if (data.success) {
                 if (data.data.length > 0) {

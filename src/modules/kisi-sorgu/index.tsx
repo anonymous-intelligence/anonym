@@ -101,7 +101,7 @@ export default function KisiSorgu() {
     toast({ title: 'Aranıyor...', description: 'TC ile kişi sorgusu yapılıyor.' })
     
     try {
-      const response = await fetch(`http://78.185.19.222:5000/api/kisi/${tc}`)
+      const response = await fetch(`https://78.185.19.222:5000/api/kisi/${tc}`)
       
       if (!response.ok) {
         if (response.status === 404) {
@@ -132,7 +132,7 @@ export default function KisiSorgu() {
     
       // Kardeş bilgileri sorgusu
       try {
-        const kardesResponse = await fetch(`http://78.185.19.222:5000/api/person/siblings/${tc}`)
+        const kardesResponse = await fetch(`https://78.185.19.222:5000/api/person/siblings/${tc}`)
         const kardesData: KardesBilgileri = await kardesResponse.json()
         if (kardesResponse.ok && kardesData.success) {
           setKardesBilgileri(kardesData)

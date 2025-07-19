@@ -48,7 +48,7 @@ function RouteComponent() {
     setAuthLoaded(false)
     const token = localStorage.getItem('token')
     if (token) {
-      fetch('http://78.185.19.222:5000/api/auth/me', {
+      fetch('https://78.185.19.222:5000/api/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
         credentials: 'include',
       })

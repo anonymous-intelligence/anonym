@@ -52,7 +52,7 @@ export default function IPTV() {
     setLoading(true)
     setError('')
     try {
-      const response = await fetch('http://78.185.19.222:5000/api/iptv/channels')
+      const response = await fetch('https://78.185.19.222:5000/api/iptv/channels')
       if (!response.ok) {
         throw new Error('Kanal listesi alınamadı')
       }

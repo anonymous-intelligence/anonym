@@ -64,7 +64,7 @@ export default function DnsDomainSorgu() {
     toast({ title: 'Sorgulanıyor...', description: 'DNS bilgileri alınıyor.' })
 
     try {
-      const response = await fetch('http://78.185.19.222:5000/api/dns-info', {
+      const response = await fetch('https://78.185.19.222:5000/api/dns-info', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

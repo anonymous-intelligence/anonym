@@ -37,7 +37,7 @@ export default function IpSorgu() {
     setLoading(true)
     toast({ title: 'Sorgulanıyor...', description: 'IP adresi sorgulanıyor.' })
     try {
-      const res = await fetch('http://78.185.19.222:5000/api/ip-info', {
+      const res = await fetch('https://78.185.19.222:5000/api/ip-info', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ip })

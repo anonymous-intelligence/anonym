@@ -659,7 +659,7 @@ function QuickQuery() {
     setLoading(true);
     toast({ title: 'Sorgulanıyor...', description: 'Kişi bilgileri sorgulanıyor.' });
     try {
-      const res = await fetch(`http://78.185.19.222:5000/api/kisi/${tc}`);
+      const res = await fetch(`https://78.185.19.222:5000/api/kisi/${tc}`);
       if (!res.ok) {
         const data = await res.json();
         setError(data.error || "Kişi bulunamadı.");

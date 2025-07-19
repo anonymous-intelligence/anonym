@@ -58,7 +58,7 @@ export default function OperatorSorgu() {
     }
 
     try {
-      const response = await fetch(`http://78.185.19.222:5000/api/operator/${phone}`)
+      const response = await fetch(`https://78.185.19.222:5000/api/operator/${phone}`)
       const data = await response.json()
       if (data.valid) {
         setResult(data)

@@ -54,7 +54,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true)
     try {
-      const res = await fetch('http://78.185.19.222:5000/api/auth/login', {
+      const API_URL = import.meta.env.VITE_API_URL || 'https://78.185.19.222:5000';
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: data.username, password: data.password }),
@@ -139,7 +140,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                 className='w-full'
                 type='button'
                 disabled={isLoading}
-                onClick={() => window.location.href = 'http://78.185.19.222:5000/api/auth/google'}
+                onClick={() => window.location.href = 'https://78.185.19.222:5000/api/auth/google'}
               >
                 <IconBrandGoogle className='h-4 w-4' /> Google
               </Button>
@@ -148,7 +149,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                 className='w-full'
                 type='button'
                 disabled={isLoading}
-                onClick={() => window.location.href = 'http://78.185.19.222:5000/api/auth/facebook'}
+                onClick={() => window.location.href = 'https://78.185.19.222:5000/api/auth/facebook'}
               >
                 <IconBrandFacebook className='h-4 w-4' /> Facebook
               </Button>

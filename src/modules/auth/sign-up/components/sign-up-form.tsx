@@ -61,7 +61,7 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
   async function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true)
     try {
-      const res = await fetch('http://78.185.19.222:5000/api/auth/register', {
+      const res = await fetch('https://78.185.19.222:5000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -175,7 +175,7 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
                 className='w-full'
                 type='button'
                 disabled={isLoading}
-                onClick={() => window.location.href = 'http://78.185.19.222:5000/api/auth/google'}
+                onClick={() => window.location.href = 'https://78.185.19.222:5000/api/auth/google'}
               >
                 <IconBrandGoogle className='h-4 w-4' /> Google
               </Button>
@@ -184,7 +184,7 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
                 className='w-full'
                 type='button'
                 disabled={isLoading}
-                onClick={() => window.location.href = 'http://78.185.19.222:5000/api/auth/facebook'}
+                onClick={() => window.location.href = 'https://78.185.19.222:5000/api/auth/facebook'}
               >
                 <IconBrandFacebook className='h-4 w-4' /> Facebook
               </Button>

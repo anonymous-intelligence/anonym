@@ -9,7 +9,7 @@ function AuthBootstrapper({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token')
     if (token) {
       setAccessToken(token)
-      fetch('http://78.185.19.222:5000/api/auth/me', {
+      fetch('https://78.185.19.222:5000/api/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
         credentials: 'include',
       })

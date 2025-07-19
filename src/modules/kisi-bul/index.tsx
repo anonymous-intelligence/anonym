@@ -19,7 +19,7 @@ const iller = ilIlceData.map(item => item.il);
 const realSearch = async (filters: Record<string, unknown>) => {
   try {
     
-    const response = await fetch('http://78.185.19.222:5000/api/kisi-bul/search', {
+    const response = await fetch('https://78.185.19.222:5000/api/kisi-bul/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
