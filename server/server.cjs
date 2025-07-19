@@ -1,3 +1,5 @@
+const fs = require('fs');
+const https = require('https');
 const express = require('express');
 const cors = require('cors');
 const { testConnection } = require('./config/database.cjs');
@@ -32,7 +34,12 @@ const adSoyadService = new AdSoyadService();
 
 // CORS middleware'i en başa ekle
 app.use(cors({
-  origin: 'http://78.185.19.222:5173',
+  origin: [
+    'http://78.185.19.222:5173',
+    'https://anonymwhoami.vercel.app',
+    'https://wexbie.com',
+    'https://wexbie.com/anonym'
+  ],
   credentials: true
 }));
 app.use(express.json());
@@ -655,33 +662,13 @@ app.get('/api/stream-proxy/stats', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
-    console.log(`📊 API Endpoints:`);
-    console.log(`   GET  /api/kisi/:tc - TC ile kişi sorgu`);
-    console.log(`   POST /api/kisi/search - Ad soyad ile arama`);
-    console.log(`   GET  /api/kisi/stats - Kişi istatistikleri`);
-    console.log(`   GET  /api/gsm/tc/:tc - TC ile GSM sorgu`);
-    console.log(`   GET  /api/gsm/number/:gsm - GSM ile TC sorgu`);
-    console.log(`   GET  /api/gsm/data - Tüm GSM verileri`);
-    console.log(`   GET  /api/gsm/stats - GSM istatistikleri`);
-    console.log(`   GET  /api/person/siblings/:tc - Kardeş bilgileri sorgu`);
-    console.log(`   GET  /api/sulale/tc/:tc - TC ile sülale sorgu`);
-    console.log(`   GET  /api/sulale/soyad/:soyad - Soyad ile sülale sorgu`);
-    console.log(`   POST /api/kisi-bul/search - Gelişmiş kişi arama`);
-    console.log(`   GET  /api/kisi-bul/stats - Kişi Bul istatistikleri`);
-    console.log(`   GET  /api/kisi-bul/cities - İl listesi`);
-    console.log(`   GET  /api/kisi-bul/districts/:city - İlçe listesi`);
-    console.log(`   POST /api/adsoyad/search - Ad Soyad arama`);
-    console.log(`   GET  /api/adsoyad/stats - Ad Soyad istatistikleri`);
-    console.log(`   GET  /api/adsoyad/cities - İl listesi`);
-    console.log(`   GET  /api/adsoyad/districts/:city - İlçe listesi`);
-    console.log(`   POST /api/ai/ask - AI sorgu`);
-    console.log(`   POST /api/sms-bomber - SMS bomber gönderimi`);
-    console.log(`   POST /api/ip-info - IP bilgisi sorgu`);
-    console.log(`   POST /api/altyapi-info - Altyapı bilgisi sorgu`);
-    console.log(`   POST /api/bin-info - BIN bilgisi sorgu`);
-    console.log(`   POST /api/dns-info - DNS bilgisi sorgu`);
-    console.log(`   GET  /api/iptv/channels - IPTV kanal listesi`);
-    console.log(`   GET  /api/iptv/stream/:id - IPTV stream linki`);
+// HTTPS server konfigürasyonu
+const options = {
+  key: fs.readFileSync(path.join(__dirname, 'server.key')),
+  cert: fs.readFileSync(path.join(__dirname, 'server.cert'))
+};
+
+// HTTPS server'ı başlat
+https.createServer(options, app).listen(5000, () => {
+  console.log('HTTPS server running on port 5000');
 });
