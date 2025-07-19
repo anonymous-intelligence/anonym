@@ -1,0 +1,61 @@
+{
+  "conversations": [
+    {
+      "id": "conv1",
+      "profile": "/images/kullanici/pp/133114470.jpg",
+      "username": "wexbie",
+      "fullName": "Eyüp Aslan",
+      "title": "Web Tasarım ve Kodlama Öğrencisi",
+      "messages": [
+        {
+          "sender": "Sen",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:15"
+        },
+        {
+          "sender": "Eyüp",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:17"
+        }
+      ]
+    },
+    {
+      "id": "conv2",
+      "profile": "/images/kullanici/pp/81803760.jpg",
+      "username": "xrenata",
+      "fullName": "Emirhan Çelik",
+      "title": "Bilgisayar Programcılığı Öğrencisi",
+      "messages": [
+        {
+          "sender": "Sen",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:15"
+        },
+        {
+          "sender": "Emirhan",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:17"
+        }
+      ]
+    },
+    {
+      "id": "conv3",
+      "profile": "https://img.piri.net/resim/imagecrop/2021/10/22/08/37/resized_399a8-9d36ab7dhalidbinvelide1621601819673.jpg",
+      "username": "kadir_altundag",
+      "fullName": "Kadir Altundağ",
+      "title": "Web Tasarım ve Kodlama Öğrencisi",
+      "messages": [
+        {
+          "sender": "Sen",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:15"
+        },
+        {
+          "sender": "Kadir",
+          "message": "Deneme",
+          "timestamp": "2025-03-14T00:44:17"
+        }
+      ]
+    }
+  ]
+}
